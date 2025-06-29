@@ -1,0 +1,6 @@
+@MadaResto.API_HostAddress = http://localhost:5204
+
+GET {{MadaResto.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
