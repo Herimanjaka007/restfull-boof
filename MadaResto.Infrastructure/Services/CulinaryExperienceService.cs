@@ -21,7 +21,7 @@ public class CulinaryExperienceService : ICulinaryExperienceService
     }
     public async Task<Guid> CreateCulinaryExperienceAsync(CulinaryExperienceCreationDTO experienceDto)
     {
-        var newExperience = new CulinaryExperience(experienceDto.Description);
+        var newExperience = new CulinaryExperience(experienceDto.Description, experienceDto.Location);
         await culinaryExperienceRepository.AddAsync(newExperience);
         return newExperience.Id;
     }

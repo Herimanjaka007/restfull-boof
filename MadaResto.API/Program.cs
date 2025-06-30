@@ -10,6 +10,7 @@ builder.Services.AddDbContext<MadaRestoDbContext>(options =>
     options.UseInMemoryDatabase("MadaRestoDb"));
 builder.Services.AddSwaggerGen();
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
 app.UseSwagger();
