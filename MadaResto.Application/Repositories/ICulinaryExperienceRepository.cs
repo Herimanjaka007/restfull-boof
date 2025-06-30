@@ -8,5 +8,5 @@ public interface ICulinaryExperienceRepository
     Task<IEnumerable<CulinaryExperience>> GetAllAsync();
     Task AddAsync(CulinaryExperience experience);
     Task UpdateAsync(CulinaryExperience experience);
-    Task DeleteAsync(Guid id);
+    Task DeleteAsync(CulinaryExperience culinaryExperience);
 }

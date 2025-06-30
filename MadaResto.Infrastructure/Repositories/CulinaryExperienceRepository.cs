@@ -19,11 +19,9 @@ public class CulinaryExperienceRepository : ICulinaryExperienceRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task DeleteAsync(Guid id)
+    public async Task DeleteAsync(CulinaryExperience culinaryExperience)
     {
-        var experience = await _context.CulinaryExperiences.FindAsync(id)
-            ?? throw new KeyNotFoundException($"CulinaryExperience with ID {id} not found.");
-        _context.CulinaryExperiences.Remove(experience);
+        _context.CulinaryExperiences.Remove(culinaryExperience);
         await _context.SaveChangesAsync();
     }
 
@@ -39,9 +37,7 @@ public class CulinaryExperienceRepository : ICulinaryExperienceRepository
 
     public async Task UpdateAsync(CulinaryExperience experience)
     {
-        var existingExperience = await _context.CulinaryExperiences.FindAsync(experience.Id)
-            ?? throw new KeyNotFoundException($"CulinaryExperience with ID {experience.Id} not found.");
-        _context.CulinaryExperiences.Update(existingExperience);
+        _context.CulinaryExperiences.Update(experience);
         await _context.SaveChangesAsync();
     }
 }
